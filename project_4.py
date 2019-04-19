@@ -209,3 +209,65 @@ def traffic(users = ["TotalTrafficHOU", "houstontranstar"]):
     return df.loc[mask, 'tweets'].values[:15]
 # the tweets are ordered most recent first by nature; the first 15 tweets are the most recent. 
 # since the resutls are not perfect, one will have information about other streets too
+
+#-------------------------------------------------------------------------------------------
+# Making a dataframe with most flood prone cities, and Twitter users with traffic updates in them:
+#---------------------------------
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+flood_url = 'https://www.cheatsheet.com/culture/american-cities-homes-danger-flooding.html/'
+flood_content = requests.get(flood_url)
+flood_soup = BeautifulSoup(flood_content.content, 'lxml')
+
+cities = []
+for h in flood_soup.find_all('h2'):
+#     print(h.text.split('.')[1:])
+#     print("".join(h.text.split('.')[1:]))
+    cities.append("".join(h.text.split('.')[1:]))
+
+cities.index(' St Augustine')
+# adding the state to St Augustine
+cities[8] = " St Augustine, Florida"
+cities = [i.strip() for i in cities]
+
+twitter_user_names = [
+    ["nevadadot"],
+    ["NJDOT_info", "511nyNJ"],
+    ["TotalTrafficDFW", "krldtraffic", "NTTATravelAlert", "cityofplanotx"],
+    ["PtreeCorners"],
+    ["fl511_panhandl"],
+    ["TotalTrafficRDU", "NCDOT_Triangle", "NCDOT", "RW911", "NCDOT_I77"],
+    ["myARDOT", "traffic_nwa", "myARDOT"],
+    ["QCTrafficAlerts", "WIBCTraffic"],
+    ["fl511_northeast", "SJSOPIO"],
+    ["ih45n_traffic", "KPRC2Traffic", "TownshipTransit"],
+    ["roundrock"],
+    ["DentonTweets", "ScannerRadioDFW", "DFWscanner"],
+    ["fl511_central", "MyNews13Traffic", "fl511_state"],
+    ["TxDOT", "TotalTrafficAUS"],
+    ["SugarLandtxgov", "houstontranstar", "TotalTrafficHOU"]
+    
+]
+
+data_f = pd.DataFrame(twitter_user_names).T
+data_f.columns = cities
+
+# making it into a function, to return Twitter user name : 
+def get_twitter_user_names(city_name):
+    """
+    Returns the Twitter user names that you can plug later in the function: traffic, that get twitter updates.
+    Parameters:
+    ----------
+    city_name: Enter the city name, state. All small letters, in this format. Example: "round rock, texas".
+    df: the dataframe of city names and their traffic Twitter user names. 
+    """
+    temp_df = data_f
+    temp_df.columns = [col.lower() for col in temp_df.columns]
+    try: 
+        mask = temp_df[city_name].notna()
+        return list(temp_df.loc[mask, city_name])
+    except KeyError: 
+        print(f'This City Does Not Have Twitter User Names Yet. Try From This List: {temp_df.columns}')
+

@@ -4,6 +4,7 @@ Optimizing Evacuation Routes using Real-Time Traffic Information
 
 # Built With
 
+* Jupyter Notebook
 * Python
 * Flask
 * JavaScript
@@ -19,3 +20,5 @@ Optimizing Evacuation Routes using Real-Time Traffic Information
 
 * [NewsAPI](https://newsapi.org/)
 * [Here API](https://developer.here.com/)
+* Tweepy
+* MapQuest API

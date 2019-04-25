@@ -1,5 +1,7 @@
 from app import db
 
+from app import KeysAPI
+
 from flask import send_file
 
 import requests
@@ -33,7 +35,7 @@ class NewsAPI():
 
 
     def __init__(self):
-        self.key = '44bf1e9f5155416eb7f68d14a9d3d81c'
+        self.key = KeysAPI.newsapi
 
     def main(self, city_name='Austin'):
         """Engine to gather all texts from different news and blogs for road closure.
@@ -185,8 +187,8 @@ class HereAPI:
     testing = None
     
     def __init__(self):
-        self.APP_ID = "zm2Tp6u9P6CWuL9hvuFX"
-        self.APP_CODE = "a2EQDaxtglSpEOK1HVE-zQ"
+        self.APP_ID = KeysAPI.here_id
+        self.APP_CODE = KeysAPI.here_code
         
     def main(self, a, b='Austin, TX', alt=0, input_self=False):
         """Gets travel summary"""
@@ -429,8 +431,8 @@ class HereAPI:
                          ######################################################################
 
 class LiveTrafficTweets:
-    auth = tweepy.OAuthHandler('TWzHjkO9FcKil1uxHds3kZMen', '3NQYeR2MDbcacKqif0zP8YpamN8Q9uhvTT5Y4FfNhPjTCmNS3V')
-    auth.set_access_token('1117765671952310272-zqQweNlWrnItaDPtw20Ln3cRnBWgQr', 'uBQx8ZbTpsV4B31w3UZgDta5rqjmN2URh61F1DyqaLxuT')
+    auth = tweepy.OAuthHandler(KeysAPI.tweet_1, KeysAPI.tweet_2)
+    auth.set_access_token(KeysAPI.tweet_3, KeysAPI.tweet_4)
     
     api = tweepy.API(auth, wait_on_rate_limit=True) 
     

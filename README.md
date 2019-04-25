@@ -1,5 +1,12 @@
 # Evacuation Routes
+
 Optimizing Evacuation Routes using Real-Time Traffic Information
+
+# Built With
+
+* Python
+* Flask
+* JavaScript
 
 # Authors
 
@@ -9,5 +16,6 @@ Optimizing Evacuation Routes using Real-Time Traffic Information
 #### [David Capella](http://davidcapella.com)
 
 # Acknowledgments
+
 * [NewsAPI](https://newsapi.org/)
 * [Here API](https://developer.here.com/)

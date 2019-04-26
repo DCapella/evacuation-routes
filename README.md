@@ -15,11 +15,19 @@ Optimizing Evacuation Routes using Real-Time Traffic Information
 
 > I built a module that interacts with the [HereAPI](https://www.here.com/) for alternative route geolocations and already known flags in the area for each of those alternative routes. In addition, I constructed another module that interacts with the [NewsAPI](https://newsapi.org/) that will gather links according to a search query of a city. Upon gathering the links I scrapped each of those websites and kept anything that had to do with road (or other related words). Then as an added part if it had something to do with closure or danger of some sort. Finally, using the micro web framework, [Flask](http://flask.pocoo.org/), I put my team's modules intergrated together to create a web application. I also had to have Python interact with JavaScript in order for the [MapQuestAPI](https://www.mapquest.com/) to work. 
 
+#### [Haya Toumy](https://hayatoumy.github.io/hayatoumy/)
+
+> Tweepy library is used to grab live tweets about traffic. Beforehand, it was manually searched to determine which Twitter users post mainly about traffic and road conditions, in each city of the most flooded ones in the US. A data frame with these Twitter usernames, and the corresponding cities was created, for the user (first respondent) to select from. Next step goal: make this data frame inclusive to every city in the US; specially the ones who face natural disasters more frequently than others.
+
 ## Modeling
 
 #### [David Capella](http://davidcapella.com)
 
 > In my part I had no real model. I used word2vec but eventually I would like to create a model that would effortlessly decide what's relevant in order to make the speed faster and take only specific sentences that are neccessary.
+
+#### [Haya Toumy](https://hayatoumy.github.io/hayatoumy/)
+
+> No modeling was needed in this process. Search through collected live tweets' text to find the entered street name by user; handling for any letter case entered by user to be accepted.
 
 ## Results
 
@@ -57,6 +65,10 @@ tweet_4 = # Your key
 > * Execute it
 > `python evacuation_routes.py`
 > * Then go to the port it specifies; most likey will be port: http://127.0.0.1:5000
+
+#### [Haya Toumy](https://hayatoumy.github.io/hayatoumy/)
+
+> A function that takes a user input for a street name, and returns 20 most recent tweets about that road condition and all its intersections. The function searches through traffic tweets from Houston, TX by default, but user can choose another city from the provided ones. All done in one line, all in small letters, for the ease and quick of use.
 
 ## Built With
 

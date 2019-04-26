@@ -25,6 +25,8 @@ Optimizing Evacuation Routes using Real-Time Traffic Information
 
 #### [David Capella](http://davidcapella.com)
 
+![Evacuation-routes-web-page](./img/webpage.png)
+
 > In order to run our final pre-deployed project, you need to do a couple of steps:
 > * Fork this git repo into your own.
 > * Place it somewhere

@@ -33,6 +33,27 @@ Optimizing Evacuation Routes using Real-Time Traffic Information
 > `git clone repo`
 > * Go into it
 > `cd evacuation-routes`
+> * Create an enviornment
+> `python -m venv venv`
+> * Activate
+> `souce venv/bin/activate`
+> * Install requirements
+> `pip install -r requirements.txt`
+> * Add file KeysAPI
+> `touch app/KeysAPI.py`
+> * Inside app/KeysAPI.py
+
+```
+newsapi = # Your key
+here_id = # Your key
+here_code = # Your key
+
+tweet_1 = # Your key
+tweet_2 = # Your key
+tweet_3 = # Your key
+tweet_4 = # Your key
+```
+
 > * Execute it
 > `python evacuation_routes.py`
 > * Then go to the port it specifies; most likey will be port: http://127.0.0.1:5000

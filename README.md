@@ -25,23 +25,15 @@ Optimizing Evacuation Routes using Real-Time Traffic Information
 
 #### [David Capella](http://davidcapella.com)
 
-In order to run our final pre-deployed project, you need to do a couple of steps:
-
-* Fork this git repo into your own.
-
-* Place it somewhere
-
-`git clone repo`
-
-* Go into it
-
-`cd evacuation-routes`
-
-* Execute it
-
-`python evacuation_routes.py`
-
-* Then go to the port it specifies; most likey will be port: http://127.0.0.1:5000
+> In order to run our final pre-deployed project, you need to do a couple of steps:
+> * Fork this git repo into your own.
+> * Place it somewhere
+> `git clone repo`
+> * Go into it
+> `cd evacuation-routes`
+> * Execute it
+> `python evacuation_routes.py`
+> * Then go to the port it specifies; most likey will be port: http://127.0.0.1:5000
 
 ## Built With
 

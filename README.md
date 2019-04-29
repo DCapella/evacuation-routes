@@ -19,6 +19,12 @@ Optimizing Evacuation Routes using Real-Time Traffic Information
 
 > Tweepy library is used to grab live tweets about traffic. Beforehand, it was manually searched to determine which Twitter users post mainly about traffic and road conditions, in each city of the most flooded ones in the US. A data frame with these Twitter usernames, and the corresponding cities was created, for the user (first respondent) to select from. Next step goal: make this data frame inclusive to every city in the US; specially the ones who face natural disasters more frequently than others.
 
+#### [Christopher Hutchins](https://xppr5-9.com)
+
+> We decided to apply the question to two different types of natural disasters: Fire and flood. Using the GetOldTweets3 library designed by Jefferson Henrique, a former General Assembly DSI student, and then debugged by, presumably, the Python developers, I was able to gather a good chunk of relevant and irrelevant data with respect to identifying road closures in the midst of the "Campfire" that raged in California from mid-February until the end of November.
+> First, I harevsted tweets from the State Fire Department and the State Dept. of Transportation in the same time period as the subject fire. I found that the results were adequate but didn't appear to have the depth for whcih we were aiming. Then I found I could do a simple word query search and that got me a nicer result insofar as I could gather tweets from everywhere that had to do with road closures. the keyword/query search appears to be the best to employ for this endeavor.
+> After that, I ran it through a mask, thanks to Haya Toumy, my colleague, otherwise I would have been wrestling with the problem for days. Like this I was able to see if the sting in each tweet contained 'road, closed, closure.' I put the results into a dataframe.
+
 ## Modeling
 
 #### [David Capella](http://davidcapella.com)
@@ -28,6 +34,10 @@ Optimizing Evacuation Routes using Real-Time Traffic Information
 #### [Haya Toumy](https://hayatoumy.github.io/hayatoumy/)
 
 > No modeling was needed in this process. Search through collected live tweets' text to find the entered street name by user; handling for any letter case entered by user to be accepted.
+
+#### [Christopher Hutchins](https://xppr5-9.com)
+
+> I used a CountVectorizer coupled with a Logistic Regression model(Logistic becasue we are classifying (thanks for the reminder Haya.) I found that it was effortlessly accurate with the y target, 99 percent accuracy. I could increase the variable target components and aggregate them to produce a finer picture of whether for instance someone needs help or if a road blockage is simply being communicated. Ideally, this would just pop up where ever your position is on the globe via geolocation on your phone. This was a fascinating project, and I feel enriched to have applied and wrestled with the things I've learned thus far for the sake of the preservation of life.
 
 ## Results
 
@@ -89,4 +99,5 @@ tweet_4 = # Your key
 * [NewsAPI](https://newsapi.org/)
 * [Here API](https://developer.here.com/)
 * Tweepy
-* MapQuest API
+* [MapQuest API](https://developer.mapquest.com/documentation/)
+
